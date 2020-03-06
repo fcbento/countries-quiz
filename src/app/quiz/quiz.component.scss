@@ -1,0 +1,14 @@
+img{
+    width: 250px;
+    height: 150px;
+}
+
+button{
+    margin-top: 40px;
+    padding: 10px;
+    cursor: pointer;
+
+    &:disabled{
+        background-color: black;
+    }
+}

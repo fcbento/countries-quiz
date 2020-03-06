@@ -1,1 +1,18 @@
-<p>quiz works!</p>
+<div>
+    <section>
+        <h5> {{current}} / 10 </h5>
+    </section>
+
+    <section>
+        <img src="{{country?.flag}}" alt="">
+    </section>
+
+    <section>
+        <input type="text" placeholder="Country">
+    </section>
+
+    <section>
+        <button (click)="goToNextQuestion()" *ngIf="current !== 10">Next</button>
+        <button (click)="finishQuiz()" *ngIf="current === 10">Finish</button>
+    </section>
+</div>
