@@ -1,0 +1,18 @@
+article{
+    width: 250px;
+    text-transform: uppercase;
+    margin: 40px;
+    border: 10px solid #00CD83;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    &:hover{
+        color: #00CD83;
+        background: white;
+        border-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+
+}
