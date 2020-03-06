@@ -1,0 +1,18 @@
+<div>
+    <section>
+        <h1>COUNTRIES QUIZ</h1>
+    </section>
+</div>
+
+<div>
+    <section>
+        <form (ngSubmit)="setUsername()" [formGroup]="user">
+            <input type="text" placeholder="What's your name?" formControlName="name" minlength="4" >
+        </form>
+    </section>
+
+    <section>
+        <small *ngIf="user.get('name').hasError('minlength') && user.get('name').touched">at least 4 letters</small>
+        <small *ngIf="!user.get('name').hasError('minlength') && user.get('name').touched">press enter to continue</small>
+    </section>
+</div>
