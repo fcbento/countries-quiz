@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+$primary: #00CD83;
+
+body{
+    background-color: #434343;
+}
+
+div{
+    display: inline-grid;
+    grid-template-columns: 1520px;
+    padding-bottom: 40px;
+    padding-top: 50px;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}
+
+h1{
+    color: $primary;
+}
+
+input {
+    width: 450px;
+    font-size: 40px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 10px solid $primary;
+    background-color: transparent;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    
+    &:focus{
+        outline: none;
+    }
+    &::placeholder {
+        font-size: 1.8rem;
+    }
+}
