@@ -61,7 +61,7 @@ export class QuizComponent implements OnInit {
     let ans = answer.toUpperCase()
     let rta = rightAnswer.toUpperCase();
 
-    if (ans === rta || rta.includes(ans)) {
+    if (ans === rta) {
       this.rightAnswers.push(rightAnswer);
     }
   }
