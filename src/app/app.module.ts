@@ -7,13 +7,15 @@ import { InpNameComponent } from './inp-name/inp-name.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OptionComponent } from './option/option.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { ScoreComponent } from './score/score.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InpNameComponent,
     OptionComponent,
-    QuizComponent
+    QuizComponent,
+    ScoreComponent
   ],
   imports: [
     BrowserModule,
