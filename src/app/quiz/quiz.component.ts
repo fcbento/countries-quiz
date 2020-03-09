@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CountriesService } from '../services/countries.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quiz',
@@ -14,7 +15,7 @@ export class QuizComponent implements OnInit {
   public answer: string = '';
   public rightAnswers = [];
 
-  constructor(private countryService: CountriesService) { }
+  constructor(private countryService: CountriesService, private router: Router) { }
 
   ngOnInit() {
 
@@ -39,11 +40,13 @@ export class QuizComponent implements OnInit {
 
   finishQuiz() {
     this.checkAnswer(this.answer.toUpperCase(), this.country['name'].toUpperCase())
+    this.countryService.setRightAnswers(this.rightAnswers);
+    this.router.navigateByUrl('/score')
   }
 
   checkAnswer(answer: string, rightAnswer: string) {
-   
-    let ans = answer.toUpperCase()      
+
+    let ans = answer.toUpperCase()
     let rta = rightAnswer.toUpperCase();
 
     if (rta.includes(ans)) {
