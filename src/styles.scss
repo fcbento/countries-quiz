@@ -41,4 +41,21 @@ input {
     &::placeholder {
         font-size: 1.8rem;
     }
+
 }
+
+@media only screen and (max-width: 600px) {
+
+    h1{
+        font-size: 30px;
+        text-align: center;
+    }
+    input{
+        width: 250px;
+        font-size: 30px;;
+
+        &::placeholder {
+            font-size: 1rem;
+        }
+    }
+};
