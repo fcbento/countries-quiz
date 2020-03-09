@@ -14,6 +14,7 @@ export class QuizComponent implements OnInit {
   public current: number = 1;
   public answer: string = '';
   public rightAnswers = [];
+  public askedQuestions = [];
 
   constructor(private countryService: CountriesService, private router: Router) { }
 
@@ -27,10 +28,21 @@ export class QuizComponent implements OnInit {
   }
 
   getRandomCountry(arr: []) {
-    this.country = arr[Math.floor(Math.random() * arr.length + 1)];
+    if (this.askedQuestions.length === 0) {
+      this.country = arr[Math.floor(Math.random() * arr.length)];
+      this.askedQuestions.push({ name: this.country['name'] })
+    } else {
+      this.askedQuestions.forEach(country => {
+        if (country.name === this.country['name']) {
+          this.country = arr[Math.floor(Math.random() * arr.length)];
+          this.askedQuestions.push({ name: this.country['name'] })
+        }
+      });
+    }
   }
 
   goToNextQuestion() {
+
     this.checkAnswer(this.answer, this.country['name']);
     this.current += 1;
     this.answer = '';
@@ -49,7 +61,7 @@ export class QuizComponent implements OnInit {
     let ans = answer.toUpperCase()
     let rta = rightAnswer.toUpperCase();
 
-    if (rta.includes(ans)) {
+    if (ans === rta || rta.includes(ans)) {
       this.rightAnswers.push(rightAnswer);
     }
   }
