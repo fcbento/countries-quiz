@@ -19,7 +19,7 @@ export class InpNameComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('CI/CD - Test 1')
+    console.log('CI/CD - Test 1 2')
   }
 
   setUsername() {
